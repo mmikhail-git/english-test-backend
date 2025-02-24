@@ -78,12 +78,12 @@ git clone https://github.com/mmikhail-git/english-test-frontend.git english-test
       └── ...`
 ```
 
-4. В папке english-test-backend создайте файл .env и добавьте в него необходимые переменные окружения:
+4. В папке english-test-backend создайте файл .env и добавьте в него необходимые переменные окружения (пример значений):
 ```
-AUTH_KEY=your_auth_key
-DB_USER=your_db_user
-DB_PASSWORD=your_db_password
-DB_NAME=your_db_name
+AUTH_KEY=76cf9af5c7ce008b1959755a37b2e795c96a77ab543064610d395244c54a8c10
+DB_USER=postgres_user
+DB_PASSWORD=postgres_password
+DB_NAME=postgres_database
 DB_HOST=db_3
 DB_PORT=5432
 ```
