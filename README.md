@@ -114,3 +114,9 @@ docker compose -f docker-compose.yml exec web alembic upgrade head
 2. Проверьте, что оба сервиса работают корректно.
 
  Демо проекта доступно по ссылке - http://english.forb1.tech 
+
+## Screenshots
+
+![Screenshot 1](https://github.com/mmikhail-git/english-test-backend/blob/e44b238fe250ae8603f1e6dcaee03d8ae152c394/screenshots/screen1.png)
+![Screenshot 2](https://github.com/mmikhail-git/english-test-backend/blob/e44b238fe250ae8603f1e6dcaee03d8ae152c394/screenshots/screen2.png)
+![Screenshot 3](https://github.com/mmikhail-git/english-test-backend/blob/e44b238fe250ae8603f1e6dcaee03d8ae152c394/screenshots/screen3.png)
