@@ -1,0 +1,5 @@
+/.env-local
+/.env
+.idea
+.venv
+info.log

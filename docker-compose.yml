@@ -1,0 +1,54 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./app/Dockerfile
+    container_name: app3-backend
+    restart: always
+    environment:
+      AUTH_KEY: ${AUTH_KEY}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+    command: uvicorn app.main:app --host 0.0.0.0
+    ports:
+      - "8000:8000"  # Порт 3000 на хосте, порт 80 в контейнере
+    networks:
+      - app3-network
+    depends_on:
+      - db_3
+
+  frontend:
+    build:
+      context: ../frontend-english-test
+      dockerfile: Dockerfile
+    container_name: app3-frontend
+    restart: always
+    ports:
+      - "3000:80"  # Порт 3000 на хосте, порт 80 в контейнере
+    networks:
+      - app3-network
+    depends_on:
+      - web
+
+  db_3:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    networks:
+      - app3-network
+
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  app3-network:
+    external: true
